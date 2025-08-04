@@ -1,8 +1,12 @@
 import java.util.ArrayList;
+//driver class to test
+
 
 public class Client {
         public static void main(String[] args) {
             ArrayList<Integer> a = new ArrayList();
+            AddCommand add = new AddCommand(receiver, "Taufiq Rahmat emailaddress@gmail.com");
+
             a.add(10);
             a.add(20);
             a.add(30);

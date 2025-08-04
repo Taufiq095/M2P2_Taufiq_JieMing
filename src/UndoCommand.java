@@ -8,6 +8,7 @@ public class UndoCommand implements Command {
 
     @Override
     public void execute() {
-        Command.super.execute();
+//        Command.super.execute();
+        receiver.undo();
     }
 }

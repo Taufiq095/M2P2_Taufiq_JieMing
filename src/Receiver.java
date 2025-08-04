@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Receiver {
 
@@ -19,14 +20,15 @@ public class Receiver {
             System.out.printf("%02d. " + dataStore.get(i) + "%n", i+1);
         }
     }
-
-
+    //method for delete
     public void delete(int index) {
         dataStore.remove(index-1);
     }
 
+    //method to undo
     // ! implement command stack
     public void undo() {
+        dataStore.clear();
 
     }
 
