@@ -7,8 +7,6 @@ public class AddCommand implements Command {
     private String lastName;
     private String emailAddress;
 
-
-
     private AddCommand(Receiver receiver, String param) {
         this.receiver = receiver;
         String[] splitParam = param.split(" ");
@@ -19,7 +17,7 @@ public class AddCommand implements Command {
 
     @Override
     public void execute() {
-//        Command.super.execute();
+// not sure what is this for Command.super.execute();
         receiver.add(firstName, lastName, emailAddress);
     }
 }

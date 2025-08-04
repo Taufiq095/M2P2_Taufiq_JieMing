@@ -28,7 +28,7 @@ public class Receiver {
     //method to undo
     // ! implement command stack
     public void undo() {
-        dataStore.clear();
+//        dataStore.clear();
 
     }
 
