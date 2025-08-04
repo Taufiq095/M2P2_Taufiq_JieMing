@@ -2,22 +2,32 @@ import java.util.ArrayList;
 
 public class Receiver {
 
-    // ! type casting of this arraylist might be wrong?
     ArrayList<String> dataStore = new ArrayList<>();
 
-    public void Add(String firstName, String lastName, String email) {
+    // ! need to add throw exceptions for incorrect data type entry
+    public void add(String firstName, String lastName, String email) {
         dataStore.add(firstName + " " + lastName + " " + email);
     }
 
-    public void Update(int index, String newString) {
-
-
+    // ! use regex to count spaces to replace firstName/lastName/email
+    public void update(int index, String newString) {
+        dataStore.add(index - 1, newString);
     }
 
-    public void List() {}
+    public void list() {
+        for (int i=0; i<dataStore.size(); i++) {
+            System.out.printf("%02d. " + dataStore.get(i) + "%n", i+1);
+        }
+    }
 
-    public void Delete() {}
 
-    public void Undo() {}
+    public void delete(int index) {
+        dataStore.remove(index-1);
+    }
+
+    // ! implement command stack
+    public void undo() {
+
+    }
 
 }
