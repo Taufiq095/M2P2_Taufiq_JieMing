@@ -9,9 +9,13 @@ public class Receiver {
         dataStore.add(firstName + " " + lastName + " " + email);
     }
 
+    // ! THIS CURRENT ITERATION DOES NOT WORK, NEED TO EDIT
     // ! use regex to count spaces to replace firstName/lastName/email
-    public void update(int index, String newString) {
-        dataStore.add(index - 1, newString);
+    public void update(int index, String stringInput) {
+        String[] newString = stringInput.split(" ");
+        for (int i = 0; i < newString.length; i++) {
+            dataStore.set(index - 1, newString[i]);
+        }
     }
 
     public void list() {
