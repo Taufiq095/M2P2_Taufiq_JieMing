@@ -1,5 +1,3 @@
-import java.util.Stack;
-
 public class AddCommand implements Command {
 
     private Receiver receiver;
@@ -7,7 +5,7 @@ public class AddCommand implements Command {
     private String lastName;
     private String emailAddress;
 
-    private AddCommand(Receiver receiver, String param) {
+    public AddCommand(Receiver receiver, String param) {
         this.receiver = receiver;
         String[] splitParam = param.split(" ");
         this.firstName = splitParam[0];
@@ -17,8 +15,12 @@ public class AddCommand implements Command {
 
     @Override
     public void execute() {
-// not sure what is this for Command.super.execute();
         receiver.add(firstName, lastName, emailAddress);
+    }
+
+    @Override
+    public void undo() {
+
     }
 }
 

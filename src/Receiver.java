@@ -1,39 +1,47 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Stack;
 
 public class Receiver {
 
-    ArrayList<String> dataStore = new ArrayList<>();
+    ArrayList<String[]> dataStore = new ArrayList<>();
 
-    // ! need to add throw exceptions for incorrect data type entry
     public void add(String firstName, String lastName, String email) {
-        dataStore.add(firstName + " " + lastName + " " + email);
+        System.out.println("add");
+        dataStore.add(new String[]{firstName, lastName, email});
     }
 
-    // ! THIS CURRENT ITERATION DOES NOT WORK, NEED TO EDIT
-    // ! use regex to count spaces to replace firstName/lastName/email
-    public void update(int index, String stringInput) {
-        String[] newString = stringInput.split(" ");
-        for (int i = 0; i < newString.length; i++) {
-            dataStore.set(index - 1, newString[i]);
+    public void update(int index, String firstName, String lastName, String email) {
+        String[] newData = {firstName, lastName, email};
+        System.out.println("update");
+        dataStore.set(index-1, newData);
+        for (int i = 0; i < newData.length; i++) {
+            if (newData[i] == null) {
+            } else {
+//                dataStore.get(index)[i] = (newData[i]);
+                String[i] =
+            }
         }
     }
 
     public void list() {
+        System.out.println("List");
         for (int i=0; i<dataStore.size(); i++) {
-            System.out.printf("%02d. " + dataStore.get(i) + "%n", i+1);
+            for  (int j=0; j<dataStore.get(i).length; j++) {
+                System.out.print(dataStore.get(i)[j] + " ");
+            }
+            System.out.println();
         }
     }
     //method for delete
     public void delete(int index) {
+        System.out.println("Delete");
         dataStore.remove(index-1);
     }
 
-    //method to undo
-    // ! implement command stack
     public void undo() {
-//        dataStore.clear();
+        System.out.println("Undo");
 
     }
-
 }
+

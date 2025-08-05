@@ -1,14 +1,14 @@
 public class DeleteCommand implements Command {
 
     private Receiver receiver;
+    private String index;
 
-    private DeleteCommand(Receiver receiver) {
+    public DeleteCommand(Receiver receiver, String index) {
         this.receiver = receiver;
+        this.index = index;
     }
-
     @Override
     public void execute() {
-        Command.super.execute();
+        receiver.delete(Integer.parseInt(index));
     }
-
 }

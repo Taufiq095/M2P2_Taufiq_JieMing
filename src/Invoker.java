@@ -1,19 +1,21 @@
 import java.util.Stack;
 
 public class Invoker {
-//list of commands given by client to execute
+
     private Command[] cmdToExecute;
 
-    public void setCommandsForExecution(Command[] Command) {
-        this.cmdToExecute = Command;
-
+    public void setCommandsForExecution(Command[] cmdToExecute) {
+        this.cmdToExecute = cmdToExecute;
     }
 
     public void executeCommand(Stack<Command> history) {
-
-        Stack<String> stack = new Stack<>();
-
+        for (int i=0; i<cmdToExecute.length; i++) {
+            cmdToExecute[i].execute();
+            if (cmdToExecute[i].toString().equals("undo") || cmdToExecute[i].toString().equals(
+                    "list")) {}
+            else {
+                history.add(cmdToExecute[i]);
+            }
+        }
     }
-
-
 }
