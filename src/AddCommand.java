@@ -8,9 +8,13 @@ public class AddCommand implements Command {
     public AddCommand(Receiver receiver, String param) {
         this.receiver = receiver;
         String[] splitParam = param.split(" ");
-        this.firstName = splitParam[0];
-        this.lastName = splitParam[1];
-        this.emailAddress = splitParam[2];
+        if (splitParam.length != 3) {
+            System.out.println("Wrong number of parameters");
+        } else {
+            this.firstName = splitParam[0];
+            this.lastName = splitParam[1];
+            this.emailAddress = splitParam[2];
+        }
     }
 
     @Override
