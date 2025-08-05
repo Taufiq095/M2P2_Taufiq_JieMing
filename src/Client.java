@@ -25,11 +25,11 @@ public class Client {
             DeleteCommand delete7 = new DeleteCommand(receiver, deleteinput7);
 
             ListCommand list = new ListCommand(receiver);
-            UndoCommand undo = new UndoCommand(receiver);
+            UndoCommand undo = new UndoCommand(receiver, history);
 
 
             Command[] command = {add1, add2, add3, add4, list, update5,
-                    list, update6, list, delete7, list, undo, list};
+                    list, update6, list, delete7, list, undo, list, add1, list, undo, list};
 
 
             Invoker invoker = new Invoker();

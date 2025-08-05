@@ -12,7 +12,9 @@ public class Invoker {
         for (int i=0; i<cmdToExecute.length; i++) {
             cmdToExecute[i].execute();
             if (cmdToExecute[i].toString().equals("undo") || cmdToExecute[i].toString().equals(
-                    "list")) {}
+                    "list")) {
+                //Do nothing, undo and list not pushed to history stack
+            }
             else {
                 history.add(cmdToExecute[i]);
             }

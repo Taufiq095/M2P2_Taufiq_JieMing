@@ -4,11 +4,8 @@ public class UpdateCommand implements Command {
 
     private Receiver receiver;
     private int index;
-//    private String firstName;
-//    private String lastName;
-//    private String email;
     private String[] param = new String[3];
-
+    private String[] oldData; //to remember the original contact data before updating
 
     public UpdateCommand(Receiver receiver, String input) {
         Arrays.fill(param, null);
@@ -26,4 +23,7 @@ public class UpdateCommand implements Command {
         receiver.update(index, param);
     }
 
+    public void undo() {
+        receiver.dataStore.set(index-1, oldData);
+    }
 }

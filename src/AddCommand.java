@@ -4,6 +4,7 @@ public class AddCommand implements Command {
     private String firstName;
     private String lastName;
     private String emailAddress;
+    private int addedIndex;
 
     public AddCommand(Receiver receiver, String param) {
         this.receiver = receiver;
@@ -19,11 +20,13 @@ public class AddCommand implements Command {
 
     @Override
     public void execute() {
-        receiver.add(firstName, lastName, emailAddress);
+        receiver.add(firstName, lastName, emailAddress); //the end of datastore
+        addedIndex = receiver.dataStore.size(); //get the size right after adding
     }
 
     @Override
     public void undo() {
+        receiver.delete(addedIndex); //deleting the last added item in datastore
 
     }
 }

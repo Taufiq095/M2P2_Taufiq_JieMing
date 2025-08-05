@@ -38,9 +38,8 @@ public class Receiver {
         dataStore.remove(index-1);
     }
 
-    public void undo() {
-        System.out.println("Undo");
-
-    }
+//    undo logic put in UndoCommand class
+//    public void undo() {
+//        System.out.println("Undo");
 }
 
