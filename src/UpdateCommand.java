@@ -22,7 +22,8 @@ public class UpdateCommand implements Command {
 
     @Override
     public void execute() {
-        receiver.update(index, param[0], param[1], param[2]);
+//        receiver.update(index, param[0], param[1], param[2]);
+        receiver.update(index, param);
     }
 
 }
