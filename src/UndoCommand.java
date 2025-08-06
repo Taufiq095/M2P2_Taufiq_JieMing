@@ -3,18 +3,19 @@ import java.util.Stack;
 public class UndoCommand implements Command {
 
     private Receiver receiver;
-    private Stack<Command> commandHistory;
+    private Stack<Command> history;
 
     public UndoCommand(Receiver receiver,  Stack<Command> history) {
         this.receiver = receiver;
-        this.commandHistory = history;
-
+        this.history = history;
     }
 
     @Override
     public void execute() {
-        if  (!commandHistory.isEmpty()) {
-            Command lastCommand = commandHistory.pop();
+        if  (!history.isEmpty()) {
+            Command lastCommand = history.pop();
+
+            System.out.println("Popped from history: " +  lastCommand.toString());
             lastCommand.undo();
             System.out.println("Undo");
         }
