@@ -22,7 +22,7 @@ public class Receiver {
             }
             System.out.println("update " + newString);
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Enter a valid index");
+            System.out.println("Please enter valid inputs");
         }
     }
 

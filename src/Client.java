@@ -16,12 +16,13 @@ public class Client {
             AddCommand add3 = new AddCommand(receiver, addinput3);
             AddCommand add4 = new AddCommand(receiver, addinput4);
 
-            String updateinput5 = "1 Adam";
-            String updateinput6 = "2 bLUe bELl ice-cream@alaskaFields.org";
+            String updateinput5 = "500 Adam";
+            String updateinput6 = "abc bLUe bELl ice-cream@alaskaFields.org " +
+                    "extraparam";
             UpdateCommand update5 = new UpdateCommand(receiver, updateinput5);
             UpdateCommand update6 = new UpdateCommand(receiver, updateinput6);
 
-            String deleteinput7 = "2";
+            String deleteinput7 = "30";
             DeleteCommand delete7 = new DeleteCommand(receiver, deleteinput7);
 
             ListCommand list = new ListCommand(receiver);

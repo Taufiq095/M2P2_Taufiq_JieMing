@@ -21,14 +21,14 @@ public class DeleteCommand implements Command {
     @Override
     public void execute() {
         if (deletedIndex == -1) {
-            System.out.println("Enter a valid index");
+            System.out.println("Please enter valid inputs");
         } else {
             try {
                 //before deleting, grab and clone the data at index
                 this.deletedData = receiver.dataStore.get(deletedIndex - 1).clone(); //-1 since arraylist starts from 0
                 receiver.delete(deletedIndex);
             } catch (IndexOutOfBoundsException e) {
-                System.out.println("Index error");
+                System.out.println("Please enter valid inputs");
             }
         }
     }
@@ -38,7 +38,7 @@ public class DeleteCommand implements Command {
         try {
             receiver.dataStore.add(deletedIndex - 1, deletedData);
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Index error");
+            System.out.println("Please enter valid inputs");
         }
     }
 

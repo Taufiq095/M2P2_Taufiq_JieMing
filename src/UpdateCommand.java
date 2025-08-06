@@ -21,9 +21,14 @@ public class UpdateCommand implements Command {
         }  catch (NumberFormatException e) {
             this.index = -1; // setting invalid index
         }
-        for (int i = 1; i < splitInput.length; i++) {
-            param[i-1] = splitInput[i].toLowerCase().substring(0, 1).toUpperCase() +
-                    splitInput[i].toLowerCase().substring(1);;
+        try {
+            for (int i = 1; i < splitInput.length; i++) {
+                param[i - 1] = splitInput[i].toLowerCase().substring(0, 1).toUpperCase() +
+                        splitInput[i].toLowerCase().substring(1);
+                ;
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            this.index = -1;
         }
 
         // ! CHECK FOR VALID EMAIL INPUT (REGEX)
@@ -32,7 +37,7 @@ public class UpdateCommand implements Command {
     @Override
     public void execute() {
         if (index == -1) {
-            System.out.println("Please enter a valid index");
+            System.out.println("Please enter valid inputs");
         } else {
             receiver.update(index, param);
         }
