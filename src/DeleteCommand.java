@@ -5,6 +5,7 @@ public class DeleteCommand implements Command {
     private int deletedIndex; //to be used to remember the original position before being deleted
     private boolean undoable = true;
 
+    @Override
     public boolean getUndoable() {
         return undoable;
     }

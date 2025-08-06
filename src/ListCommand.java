@@ -3,6 +3,7 @@ public class ListCommand implements Command {
     private Receiver receiver;
     private boolean undoable = false;
 
+    @Override
     public boolean getUndoable() {
         return undoable;
     }

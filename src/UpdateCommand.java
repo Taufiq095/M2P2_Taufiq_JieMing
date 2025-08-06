@@ -8,6 +8,7 @@ public class UpdateCommand implements Command {
     private String[] oldData; //to remember the original contact data before updating
     private boolean undoable = true;
 
+    @Override
     public boolean getUndoable() {
         return undoable;
     }
