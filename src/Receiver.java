@@ -12,14 +12,18 @@ public class Receiver {
     }
 
     public void update(int index, String[] input) {
-        String newString = "# " + index;
-        for (int i = 0; i < input.length; i++) {
-            if (input[i] != null) {
-                newString = newString.concat(" ").concat(input[i]);
-                dataStore.get(index - 1)[i] = input[i];
+        try {
+            String newString = "# " + index;
+            for (int i = 0; i < input.length; i++) {
+                if (input[i] != null) {
+                    newString = newString.concat(" ").concat(input[i]);
+                    dataStore.get(index - 1)[i] = input[i];
+                }
             }
+            System.out.println("update " + newString);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Enter a valid index");
         }
-        System.out.println("update " + newString);
     }
 
     public void list() {

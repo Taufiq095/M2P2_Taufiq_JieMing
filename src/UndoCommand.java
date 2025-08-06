@@ -20,21 +20,14 @@ public class UndoCommand implements Command {
         if  (!history.isEmpty()) {
             Command lastCommand = history.pop();
 
-            System.out.println("Popped from history: " +  lastCommand.toString());
+            // ! print output error - printing memory location
+            System.out.println("Popped from history: " +  lastCommand);
             lastCommand.undo();
             System.out.println("Undo");
         }
         else {
             System.out.println("Nothing to undo.");
         }
-
-        //needs to access the history stack to pop and undo
-//        receiver.undo(); Removed undo from Receiver and use it here instead
-
     }
 
-//    @Override
-//    public void undo() {
-//
-//    }
 }

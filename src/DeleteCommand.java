@@ -11,18 +11,35 @@ public class DeleteCommand implements Command {
 
     public DeleteCommand(Receiver receiver, String param) {
         this.receiver = receiver;
-        this.deletedIndex= Integer.parseInt(param); //parse the String[] param to int
+        try {
+            this.deletedIndex = Integer.parseInt(param);
+        }  catch (NumberFormatException e) {
+            this.deletedIndex = -1; // setting invalid index
+        }
     }
+
     @Override
     public void execute() {
-        //before deleting, grab and clone the data at index
-        this.deletedData = receiver.dataStore.get(deletedIndex - 1).clone(); //-1 since arraylist starts from 0
-        receiver.delete(deletedIndex);
+        if (deletedIndex == -1) {
+            System.out.println("Enter a valid index");
+        } else {
+            try {
+                //before deleting, grab and clone the data at index
+                this.deletedData = receiver.dataStore.get(deletedIndex - 1).clone(); //-1 since arraylist starts from 0
+                receiver.delete(deletedIndex);
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Index error");
+            }
+        }
     }
     @Override
     //For DeleteCommand, undo restores the data from history
     public void undo() {
-        receiver.dataStore.add(deletedIndex - 1, deletedData);
+        try {
+            receiver.dataStore.add(deletedIndex - 1, deletedData);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Index error");
+        }
     }
 
 }

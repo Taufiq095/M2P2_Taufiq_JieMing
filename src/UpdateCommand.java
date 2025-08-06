@@ -15,16 +15,27 @@ public class UpdateCommand implements Command {
     public UpdateCommand(Receiver receiver, String input) {
         this.receiver = receiver;
         String[] splitInput = input.split(" ");
-        this.index = Integer.parseInt(splitInput[0]);
-        for (int i = 1; i < splitInput.length; i++) {
-            param[i-1] = splitInput[i];
+        try {
+            // first parameter as integer index
+            this.index = Integer.parseInt(splitInput[0]);
+        }  catch (NumberFormatException e) {
+            this.index = -1; // setting invalid index
         }
+        for (int i = 1; i < splitInput.length; i++) {
+            param[i-1] = splitInput[i].toLowerCase().substring(0, 1).toUpperCase() +
+                    splitInput[i].toLowerCase().substring(1);;
+        }
+
+        // ! CHECK FOR VALID EMAIL INPUT (REGEX)
     }
 
     @Override
     public void execute() {
-//        receiver.update(index, param[0], param[1], param[2]);
-        receiver.update(index, param);
+        if (index == -1) {
+            System.out.println("Please enter a valid index");
+        } else {
+            receiver.update(index, param);
+        }
     }
 
     public void undo() {
