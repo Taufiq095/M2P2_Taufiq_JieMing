@@ -3,6 +3,11 @@ public class DeleteCommand implements Command {
     private Receiver receiver;
     private String[] deletedData; //to remember what was deleted, array since 3 parameters
     private int deletedIndex; //to be used to remember the original position before being deleted
+    private boolean undoable = true;
+
+    public boolean getUndoable() {
+        return undoable;
+    }
 
     public DeleteCommand(Receiver receiver, String param) {
         this.receiver = receiver;

@@ -6,9 +6,13 @@ public class UpdateCommand implements Command {
     private int index;
     private String[] param = new String[3];
     private String[] oldData; //to remember the original contact data before updating
+    private boolean undoable = true;
+
+    public boolean getUndoable() {
+        return undoable;
+    }
 
     public UpdateCommand(Receiver receiver, String input) {
-        Arrays.fill(param, null);
         this.receiver = receiver;
         String[] splitInput = input.split(" ");
         this.index = Integer.parseInt(splitInput[0]);

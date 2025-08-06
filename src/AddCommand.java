@@ -5,6 +5,11 @@ public class AddCommand implements Command {
     private String lastName;
     private String emailAddress;
     private int addedIndex;
+    private boolean undoable = true;
+
+    public boolean getUndoable() {
+        return undoable;
+    }
 
     public AddCommand(Receiver receiver, String param) {
         this.receiver = receiver;

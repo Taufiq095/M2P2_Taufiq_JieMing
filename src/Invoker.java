@@ -11,9 +11,7 @@ public class Invoker {
     public void executeCommand(Stack<Command> history) {
         for (int i=0; i<cmdToExecute.length; i++) {
             cmdToExecute[i].execute();
-            if (!cmdToExecute[i].toString().equals("undo") && !cmdToExecute[i].toString().equals(
-                    "list")) {
-
+            if (cmdToExecute[i].getUndoable()) {
                 history.push(cmdToExecute[i]);
             }
             //everything else is skipped

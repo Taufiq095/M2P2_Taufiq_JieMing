@@ -4,6 +4,11 @@ public class UndoCommand implements Command {
 
     private Receiver receiver;
     private Stack<Command> history;
+    private boolean undoable = true;
+
+    public boolean getUndoable() {
+        return undoable;
+    }
 
     public UndoCommand(Receiver receiver,  Stack<Command> history) {
         this.receiver = receiver;
