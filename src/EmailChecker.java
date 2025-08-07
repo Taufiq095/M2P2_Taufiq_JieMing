@@ -41,21 +41,4 @@ public class EmailChecker {
         return (validateLocalPart(localPart) && validateDomainPart(domainPart));
         }
 
-
-
-    //check validity of email
-
-//    private boolean validateLocalPart(String localPart) {
-//        if (localPart == null || localPart.isBlank()) {
-//            return false;
-//        } else return local_Pattern.matcher(localPart).matches();
-//    }
-//
-//    private boolean validateDomainPart(String domainPart) {
-//        if (domainPart == null || domainPart.isBlank()) {
-//            return false;
-//        } else return local_Pattern.matcher(domainPart).matches();
-//    }
-
-
 }

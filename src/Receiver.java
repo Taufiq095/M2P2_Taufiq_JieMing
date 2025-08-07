@@ -12,18 +12,6 @@ public class Receiver {
     }
 
     public void update(int index, String[] input) {
-//        try {
-//            String newString = "# " + index;
-//            for (int i = 0; i < input.length; i++) {
-//                newString = newString.concat(" ").concat(input[i]);
-//                dataStore.get(index - 1)[i] = input[i];
-//            }
-//            System.out.println("update " + newString);
-//        } catch (IndexOutOfBoundsException e) {
-//            System.out.println("Please enter valid inputs");
-//        }
-
-        System.out.println(input.length);
         if (index == -1) {
             System.out.println("Please enter valid input");
         } else if (index < dataStore.size()) {
@@ -61,8 +49,5 @@ public class Receiver {
         dataStore.remove(index-1);
     }
 
-//    undo logic put in UndoCommand class
-//    public void undo() {
-//        System.out.println("Undo");
 }
 
