@@ -7,7 +7,7 @@ public class Client {
             Receiver receiver = new Receiver();
 
             String addinput1 = "First_name Last_name Email";
-            String addinput2 = "joHn dOe simple@example.com";
+            String addinput2 = "joHn dOe @example.com";
             String addinput3 = "Hanna Moon tetter.tots@potatoesarelife.com";
             String addinput4 = "Ah Boon green-tea@teaforlife.com";
 
@@ -16,13 +16,12 @@ public class Client {
             AddCommand add3 = new AddCommand(receiver, addinput3);
             AddCommand add4 = new AddCommand(receiver, addinput4);
 
-            String updateinput5 = "500 Adam";
-            String updateinput6 = "abc bLUe bELl ice-cream@alaskaFields.org " +
-                    "extraparam";
+            String updateinput5 = "3 Adam";
+            String updateinput6 = "1 bLUe bELl @alaskaFields.org ";
             UpdateCommand update5 = new UpdateCommand(receiver, updateinput5);
             UpdateCommand update6 = new UpdateCommand(receiver, updateinput6);
 
-            String deleteinput7 = "30";
+            String deleteinput7 = "1";
             DeleteCommand delete7 = new DeleteCommand(receiver, deleteinput7);
 
             ListCommand list = new ListCommand(receiver);

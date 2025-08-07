@@ -21,7 +21,7 @@ public class UndoCommand implements Command {
         if  (!history.isEmpty()) {
             Command lastCommand = history.pop();
 
-            // ! print output error - printing memory location
+            // ! remove the debugging line when submitting
             //doesnt matter for now since this is just a debugging check . Actual output dont need this
             System.out.println("Popped from history: " +  lastCommand);
             lastCommand.undo();

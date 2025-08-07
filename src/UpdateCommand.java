@@ -31,16 +31,18 @@ public class UpdateCommand implements Command {
         } catch (ArrayIndexOutOfBoundsException e) {
             this.index = -1;
         }
-
-        // ! CHECK FOR VALID EMAIL INPUT (REGEX)
     }
 
     @Override
     public void execute() {
-        if (index == -1) {
-            System.out.println("Please enter valid inputs");
+        if (!EmailChecker.isValidEmail(param[2])) {
+            System.out.println("Invalid email address");
         } else {
-            receiver.update(index, param);
+            if (index == -1) {
+                System.out.println("Please enter valid inputs");
+            } else {
+                receiver.update(index, param);
+            }
         }
     }
 
