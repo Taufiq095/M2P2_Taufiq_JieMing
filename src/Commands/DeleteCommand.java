@@ -1,3 +1,8 @@
+package Commands;
+
+import Main.Command;
+import Main.Receiver;
+
 public class DeleteCommand implements Command {
 
     private Receiver receiver;
@@ -34,7 +39,7 @@ public class DeleteCommand implements Command {
         }
     }
     @Override
-    //For DeleteCommand, undo restores the data from history
+    //For Commands.DeleteCommand, undo restores the data from history
     public void undo() {
         try {
             receiver.dataStore.add(deletedIndex - 1, deletedData);

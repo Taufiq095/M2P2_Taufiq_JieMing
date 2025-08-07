@@ -1,3 +1,9 @@
+package Commands;
+
+import Helper.EmailChecker;
+import Main.Command;
+import Main.Receiver;
+
 public class AddCommand implements Command {
 
     private Receiver receiver;

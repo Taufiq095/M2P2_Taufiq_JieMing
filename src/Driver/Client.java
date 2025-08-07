@@ -1,3 +1,10 @@
+package Driver;
+
+import Commands.*;
+import Main.Command;
+import Main.Invoker;
+import Main.Receiver;
+
 import java.util.Stack;
 
 public class Client {
@@ -33,6 +40,7 @@ public class Client {
             Invoker invoker = new Invoker();
             invoker.setCommandsForExecution(command);
             invoker.executeCommand(history);
+            receiver.storeToFile(); //Save everything at once
 
         }
     }

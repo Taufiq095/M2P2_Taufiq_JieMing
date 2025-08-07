@@ -1,10 +1,15 @@
+package Main;
+
+import Helper.EmailChecker;
+
+import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Stack;
+import java.io.*;
 
 public class Receiver {
 
-    ArrayList<String[]> dataStore = new ArrayList<>();
+    public ArrayList<String[]> dataStore = new ArrayList<>();
+    private static final String FILE_PATH = "src/dataStore.txt";
 
     public void add(String firstName, String lastName, String email) {
         System.out.println("add");
@@ -31,7 +36,18 @@ public class Receiver {
             System.out.println("update " + newString);
         }
 
+        public void storeToFile() {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_PATH))) {
+            for (String [] data : dataStore) {
+                writer.println(data[0] + " " + data[1] + " " + data[2]);
+            }
+            System.out.println("Data successfully saved to  " + FILE_PATH);
+        }
+        catch (IOException e) {
+            System.out.println("Error saving data to " + FILE_PATH);
+        }
 
+        }
 
     public void list() {
         System.out.println("List");

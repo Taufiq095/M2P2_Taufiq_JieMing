@@ -1,4 +1,7 @@
-import java.util.Arrays;
+package Commands;
+
+import Main.Command;
+import Main.Receiver;
 
 public class UpdateCommand implements Command {
 

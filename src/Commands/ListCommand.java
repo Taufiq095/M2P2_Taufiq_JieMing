@@ -1,3 +1,8 @@
+package Commands;
+
+import Main.Command;
+import Main.Receiver;
+
 public class ListCommand implements Command {
 
     private Receiver receiver;
