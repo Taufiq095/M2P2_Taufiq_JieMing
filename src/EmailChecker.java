@@ -12,7 +12,7 @@ public class EmailChecker {
     private static final Pattern local_Pattern = Pattern.compile(localEmail_REGEX);
 
     //   private static final String domainEmail_REGEX
-    private static final String domainEmail_REGEX = "[A-Za-z0-9-]+[.][a-z.]{2,3}]";
+    private static final String domainEmail_REGEX = "^[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*\\.[a-z]{2,3}$";
 
     //    private static final Pattern domain_Pattern = Pattern.compile(domainEmail_REGEX);
     private static final Pattern domain_Pattern = Pattern.compile(domainEmail_REGEX);
@@ -26,13 +26,11 @@ public class EmailChecker {
     private static boolean validateDomainPart(String domainPart) {
         if (domainPart == null || domainPart.isBlank()) {
             return false;
-        } else return local_Pattern.matcher(domainPart).matches();
+        } else return domain_Pattern.matcher(domainPart).matches();
     }
 
     public static boolean isValidEmail(String email) {
-        if (email == null || email.isBlank()) {
-            return false;
-        } else {
+
         String[] parts = email.split("@");
         if (parts.length != 2) {
             return false;
@@ -42,7 +40,7 @@ public class EmailChecker {
         String domainPart = parts[1];
         return (validateLocalPart(localPart) && validateDomainPart(domainPart));
         }
-    }
+
 
 
     //check validity of email
