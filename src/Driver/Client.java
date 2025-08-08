@@ -47,17 +47,17 @@ public class Client {
             UndoCommand undo = new UndoCommand(receiver, history);
 
             Command[] command = {
-//                    add1, add2, list,
-//                    add3, add4, list,
-//                    add5, add6,
+                    add1, add2, list,
+                    add3, add4, list,
+                    add5, add6,
                     add7, list,
                     update5, list,
-//                    update6, list,
-//                    delete7, list,
-//                    update7, list,
+                    update6, list,
+                    delete7, list,
+                    update7, list,
                     undo, list,
-//                    delete8, list,
-//                    delete9, list
+                    delete8, list,
+                    delete9, list
             };
 
             Invoker invoker = new Invoker();
