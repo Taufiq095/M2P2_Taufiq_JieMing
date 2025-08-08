@@ -13,6 +13,12 @@ public class AddCommand implements Command {
     private String data3String;
     private int addedIndex;
     private String[] splitParam;
+
+    /**
+     * Returns whether this command is undoable.
+     *
+     * @return {@code true} if the command can be undone, {@code false} otherwise.
+     */
     private boolean undoable = true;
 
 

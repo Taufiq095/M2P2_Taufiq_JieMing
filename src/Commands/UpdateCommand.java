@@ -12,6 +12,12 @@ public class UpdateCommand implements Command {
     private String[] param;
     String[]splitInput;
     private String[] oldData; //to remember the original contact data before updating
+
+    /**
+     * Returns whether this command is undoable.
+     *
+     * @return {@code true} if the command can be undone, {@code false} otherwise.
+     */
     private boolean undoable = true;
 
     @Override

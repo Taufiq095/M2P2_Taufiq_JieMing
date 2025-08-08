@@ -8,6 +8,12 @@ public class DeleteCommand implements Command {
     private Receiver receiver;
     private String[] deletedData; //to remember what was deleted, array since 3 parameters
     private int deletedIndex; //to be used to remember the original position before being deleted
+
+    /**
+     * Returns whether this command is undoable.
+     *
+     * @return {@code true} if the command can be undone, {@code false} otherwise.
+     */
     private boolean undoable = true;
 
     @Override

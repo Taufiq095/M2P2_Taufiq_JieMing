@@ -6,6 +6,12 @@ import Main.Receiver;
 public class ListCommand implements Command {
 
     private Receiver receiver;
+
+    /**
+     * Returns whether this command is undoable.
+     *
+     * @return {@code true} if the command can be undone, {@code false} otherwise.
+     */
     private boolean undoable = false;
 
     @Override
