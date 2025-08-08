@@ -1,5 +1,7 @@
 package Commands;
 
+import Helper.EmailChecker;
+import Helper.InvalidInputsException;
 import Main.Command;
 import Main.Receiver;
 
@@ -8,6 +10,7 @@ public class UpdateCommand implements Command {
     private Receiver receiver;
     private int index;
     private String[] param;
+    String[]splitInput;
     private String[] oldData; //to remember the original contact data before updating
     private boolean undoable = true;
 
@@ -18,7 +21,7 @@ public class UpdateCommand implements Command {
 
     public UpdateCommand(Receiver receiver, String input) {
         this.receiver = receiver;
-        String[] splitInput = input.split(" ");
+        splitInput = input.split(" ");
         this.param = new String[splitInput.length-1];
         try {
             // first parameter as integer index
@@ -39,7 +42,21 @@ public class UpdateCommand implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute() throws InvalidInputsException {
+        try {
+            // first parameter as integer index
+            this.index = Integer.parseInt(splitInput[0]);
+        } catch (NumberFormatException e) { // for invalid index input
+            System.out.println("Please enter valid index");
+        }
+            if (index > receiver.dataStore.size()) {
+                throw new InvalidInputsException("Please enter a valid index");
+            }
+        if (param.length == 2) {
+            if (!EmailChecker.isValidEmail(param[2])) {
+                throw new InvalidInputsException("Please enter valid inputs");
+            }
+        }
         receiver.update(index, param);
     }
 

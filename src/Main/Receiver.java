@@ -1,7 +1,5 @@
 package Main;
 
-import Helper.EmailChecker;
-
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.io.*;
@@ -9,7 +7,7 @@ import java.io.*;
 public class Receiver {
 
     public ArrayList<String[]> dataStore = new ArrayList<>();
-    private static final String FILE_PATH = "src/dataStore.txt";
+    private static final String FILE_PATH = "src/SavedFiles/dataStore.txt";
 
     public void add(String firstName, String lastName, String email) {
         System.out.println("add");
@@ -17,16 +15,6 @@ public class Receiver {
     }
 
     public void update(int index, String[] input) {
-        if (index == -1) {
-            System.out.println("Please enter valid input");
-        } else if (index < dataStore.size()) {
-            System.out.println("Please enter valid index");
-        } else if (input.length == 3) {// has email input
-                if (!EmailChecker.isValidEmail(input[2])) { // email check
-                    System.out.println("Please enter valid email");
-                }
-            }
-            //inputs all valid
             String newString = "# " + index;
             for (int i = 0; i < input.length; i++) {
                 // print update string
@@ -34,7 +22,7 @@ public class Receiver {
                 dataStore.get(index - 1)[i] = input[i];
             }
             System.out.println("update " + newString);
-        }
+    }
 
         public void storeToFile() {
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_PATH))) {

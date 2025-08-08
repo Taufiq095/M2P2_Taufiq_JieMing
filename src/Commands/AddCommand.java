@@ -1,6 +1,7 @@
 package Commands;
 
 import Helper.EmailChecker;
+import Helper.InvalidInputsException;
 import Main.Command;
 import Main.Receiver;
 
@@ -39,14 +40,16 @@ public class AddCommand implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute() throws InvalidInputsException {
         if (!EmailChecker.isValidEmail(emailAddress)) {
             System.out.println("Invalid email address");
+//            throw new InvalidInputsException("Please enter valid inputs");
         } else {
             receiver.add(firstName, lastName, emailAddress); //the end of
             // datastore
             addedIndex = receiver.dataStore.size();
-        }//get the size right after adding
+
+        }
     }
 
     @Override
