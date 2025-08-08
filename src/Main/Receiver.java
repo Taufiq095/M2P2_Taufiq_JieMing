@@ -11,7 +11,6 @@ import java.io.*;
 public class Receiver {
 
     public ArrayList<String[]> dataStore = new ArrayList<>();
-    private static final String FILE_PATH = "src/SavedFiles/dataStore.txt";
 
     public void add(String firstName, String lastName, String email) {
         System.out.println("add");
@@ -29,7 +28,7 @@ public class Receiver {
     }
 
     public void storeToFile() {
-        Path filePath = Paths.get("src/SavedFiles/dataStore.txt");
+        Path filePath = Paths.get("src/dataStore.txt");
 
         try (BufferedWriter buff_writer = Files.newBufferedWriter(filePath, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
             for(String[] line : this.dataStore) {
