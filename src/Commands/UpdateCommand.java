@@ -23,12 +23,12 @@ public class UpdateCommand implements Command {
         this.receiver = receiver;
         splitInput = input.split(" ");
         this.param = new String[splitInput.length-1];
-        try {
-            // first parameter as integer index
-            this.index = Integer.parseInt(splitInput[0]);
-        } catch (NumberFormatException e) { // for invalid index input
-            this.index = -1; // setting invalid index
-        }
+//        try {
+//            // first parameter as integer index
+//            this.index = Integer.parseInt(splitInput[0]);
+//        } catch (NumberFormatException e) { // for invalid index input
+//            this.index = -1; // setting invalid index
+//        }
             // capitalising first letter of first name and last name
             for (int i =0; i < param.length; i++) {
                 param[i] = splitInput[i+1];
@@ -42,7 +42,15 @@ public class UpdateCommand implements Command {
 
     @Override
     public void execute() throws InvalidInputsException {
-        this.index = Integer.parseInt(splitInput[0]);
+        try {
+            // first parameter as integer index
+            this.index = Integer.parseInt(splitInput[0]);
+        } catch (NumberFormatException e) { // for invalid index input
+           throw new InvalidInputsException("Please enter valid inputs"); //
+            // setting invalid
+            // index
+        }
+//        this.index = Integer.parseInt(splitInput[0]);
         if (index > receiver.dataStore.size()) {
             throw new InvalidInputsException("Please enter a valid index");
         }

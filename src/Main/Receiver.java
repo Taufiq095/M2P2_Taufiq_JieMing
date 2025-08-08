@@ -35,8 +35,7 @@ public class Receiver {
                 buff_writer.write(line[0] + " " + line[1] + " " + line[2]);
                 buff_writer.newLine();
             }
-
-            System.out.println("Data saved successfully to: " + String.valueOf(filePath));
+//            System.out.println("Data saved successfully to: " + String.valueOf(filePath));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -58,6 +57,5 @@ public class Receiver {
         System.out.println("Delete # " + index);
         dataStore.remove(index-1);
     }
-
 }
 
