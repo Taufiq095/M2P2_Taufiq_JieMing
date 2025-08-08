@@ -1,3 +1,2 @@
 First_name Last_name Email@emial.com
-Daniel Doe simple@example.com
-Valid Input valid@input.com
+John Doe simple@example.com

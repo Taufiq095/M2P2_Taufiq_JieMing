@@ -22,6 +22,7 @@ public class Client {
             String addinput5 = "ching uyguyg joel joelching@Hotmail.com";
             String addinput6 = "ching joel joel@ching@Hotmail.com ghjghjghj";
             String addinput7 = "valid input valid@input.com";
+            String addinput8 = "         ";
 
             AddCommand add1 = new AddCommand(receiver, addinput1);
             AddCommand add2 = new AddCommand(receiver, addinput2);
@@ -30,18 +31,19 @@ public class Client {
             AddCommand add5 = new AddCommand(receiver, addinput5);
             AddCommand add6 = new AddCommand(receiver, addinput6);
             AddCommand add7 = new AddCommand(receiver, addinput7);
+            AddCommand add8 = new AddCommand(receiver, addinput8);
 
-            String updateinput5 = "1 Adam";
+            String updateinput5 = "-50.50 Adam";
             String updateinput6 = "al bLUe bELl ice-cream@alaskaF@@ields.org ";
             String updateinput7 = "5 daniel negreanu dndn@email.commmm daniel";
-            String updateinput8 = "02 daniel";
+            String updateinput8 = "_____";
             UpdateCommand update5 = new UpdateCommand(receiver, updateinput5);
             UpdateCommand update6 = new UpdateCommand(receiver, updateinput6);
             UpdateCommand update7 = new UpdateCommand(receiver, updateinput7);
             UpdateCommand update8 = new UpdateCommand(receiver, updateinput8);
 
             String deleteinput7 = "666";
-            String deleteinput8 = "abc";
+            String deleteinput8 = "______";
             String deleteinput9 = "$$$";
             DeleteCommand delete7 = new DeleteCommand(receiver, deleteinput7);
             DeleteCommand delete8 = new DeleteCommand(receiver, deleteinput8);
@@ -52,17 +54,18 @@ public class Client {
 
             Command[] command = {
                     add1, add2, list,
-                    add3, add4, list,
-                    add5, add6,
-                    add7, list,
+//                    add3, add4, list,
+//                    add5, add6,
+//                    add7, list,
+                    add8, list,
                     update5, list,
-                    update6, list,
-                    delete7, list,
-                    update7, list,
-                    update8, list,
-                    undo, list,
-                    delete8, list,
-                    delete9, list
+//                    update6, list,
+//                    delete7, list,
+//                    update7, list,
+//                    update8, list,
+//                    undo, list,
+//                    delete8, list,
+//                    delete9, list
             };
 
             Invoker invoker = new Invoker();
