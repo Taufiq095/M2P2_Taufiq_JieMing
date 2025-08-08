@@ -1,6 +1,10 @@
 package Main;
 
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.io.*;
 
@@ -24,18 +28,21 @@ public class Receiver {
             System.out.println("update " + newString);
     }
 
-        public void storeToFile() {
-        try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_PATH))) {
-            for (String [] data : dataStore) {
-                writer.println(data[0] + " " + data[1] + " " + data[2]);
+    public void storeToFile() {
+        Path filePath = Paths.get("src/SavedFiles/dataStore.txt");
+
+        try (BufferedWriter buff_writer = Files.newBufferedWriter(filePath, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
+            for(String[] line : this.dataStore) {
+                buff_writer.write(line[0] + " " + line[1] + " " + line[2]);
+                buff_writer.newLine();
             }
-            System.out.println("Data successfully saved to  " + FILE_PATH);
-        }
-        catch (IOException e) {
-            System.out.println("Error saving data to " + FILE_PATH);
+
+            System.out.println("Data saved successfully to: " + String.valueOf(filePath));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        }
+    }
 
     public void list() {
         System.out.println("List");
