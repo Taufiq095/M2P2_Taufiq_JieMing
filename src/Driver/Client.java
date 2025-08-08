@@ -17,9 +17,10 @@ public class Client {
             String addinput1 = "First_name Last_name Email";
             String addinput2 = "joHn dOe simple@example.com";
             String addinput3 = "Hanna Moon tetter.tots@pota###toesarelife.com";
-            String addinput4 = "Ah Boon green-tea@teaforlife.com";
-            String addinput5 = "ching joel joelching@Hotmail.com";
-            String addinput6 = "ching joel joel@ching@Hotmail.com";
+            String addinput4 = "Ah green-tea@teaforlife.com";
+            String addinput5 = "ching uyguyg joel joelching@Hotmail.com";
+            String addinput6 = "ching joel joel@ching@Hotmail.com ghjghjghj";
+            String addinput7 = "valid input valid@input.com";
 
             AddCommand add1 = new AddCommand(receiver, addinput1);
             AddCommand add2 = new AddCommand(receiver, addinput2);
@@ -27,6 +28,7 @@ public class Client {
             AddCommand add4 = new AddCommand(receiver, addinput4);
             AddCommand add5 = new AddCommand(receiver, addinput5);
             AddCommand add6 = new AddCommand(receiver, addinput6);
+            AddCommand add7 = new AddCommand(receiver, addinput7);
 
             String updateinput5 = "500 Adam";
             String updateinput6 = "al bLUe bELl ice-cream@alaskaF@@ields.org ";
@@ -45,7 +47,9 @@ public class Client {
             ListCommand list = new ListCommand(receiver);
             UndoCommand undo = new UndoCommand(receiver, history);
 
-            Command[] command = {add1, add2, add3, add4, add5, add6, list,
+            Command[] command = {add1, add2, list,
+                    add3, add4, list,
+                    add5, add6, add7, list,
                     update5, list,
                     update6, list,
                     delete7, list,
@@ -58,7 +62,7 @@ public class Client {
             Invoker invoker = new Invoker();
             invoker.setCommandsForExecution(command);
             invoker.executeCommand(history);
-            receiver.storeToFile(); //Save everything at once
+            receiver.storeToFile();
 
         }
     }

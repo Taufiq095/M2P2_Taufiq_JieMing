@@ -56,8 +56,8 @@ public class UpdateCommand implements Command {
             if (!EmailChecker.isValidEmail(param[2])) {
                 throw new InvalidInputsException("Please enter valid inputs");
             }
+            receiver.update(index, param);
         }
-        receiver.update(index, param);
     }
 
     public void undo() {

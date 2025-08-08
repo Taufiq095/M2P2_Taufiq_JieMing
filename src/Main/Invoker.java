@@ -13,16 +13,16 @@ public class Invoker {
     }
 
     public void executeCommand(Stack<Command> history) throws InvalidInputsException {
-        try {
-            for (int i=0; i<cmdToExecute.length; i++) {
-                cmdToExecute[i].execute();
-                if (cmdToExecute[i].getUndoable()) {
-                    history.push(cmdToExecute[i]);
-                }
-            //everything else is skipped
-        }
-    } catch (InvalidInputsException e) {
-            System.out.println(e.getMessage());
+        for (int i=0; i<cmdToExecute.length; i++) {
+            try {
+                    cmdToExecute[i].execute();
+                    if (cmdToExecute[i].getUndoable()) {
+                        history.push(cmdToExecute[i]);
+                    }
+                //everything else is skipped
+            } catch (InvalidInputsException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 }
