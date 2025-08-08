@@ -44,11 +44,7 @@ public class UpdateCommand implements Command {
     @Override
     public void execute() throws InvalidInputsException {
         try {
-            // first parameter as integer index
             this.index = Integer.parseInt(splitInput[0]);
-        } catch (NumberFormatException e) { // for invalid index input
-            System.out.println("Please enter valid index");
-        }
             if (index > receiver.dataStore.size()) {
                 throw new InvalidInputsException("Please enter a valid index");
             }
@@ -57,6 +53,11 @@ public class UpdateCommand implements Command {
                 throw new InvalidInputsException("Please enter valid inputs");
             }
             receiver.update(index, param);
+        }
+        } catch (NumberFormatException e) { // for invalid index input
+            System.out.println("Please enter valid index");
+        } catch (InvalidInputsException e) {
+            System.out.println(e.getMessage());
         }
     }
 

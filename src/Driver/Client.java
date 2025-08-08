@@ -9,7 +9,7 @@ import Main.Receiver;
 import java.util.Stack;
 
 public class Client {
-        public static void main(String[] args) throws InvalidInputsException {
+        public static void main(String[] args) {
 
             Stack<Command> history = new Stack<>();
             Receiver receiver = new Receiver();
