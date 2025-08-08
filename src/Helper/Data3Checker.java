@@ -2,7 +2,7 @@ package Helper;
 
 import java.util.regex.Pattern;
 
-public class EmailChecker {
+public class Data3Checker {
 
 
     //email validation using REGEX, local before @, domain after @
@@ -44,4 +44,13 @@ public class EmailChecker {
         return result;
         }
 
+    private static final String data3String_REGEX = "^[a-zA-Z0-9_]+";
+
+    private static final Pattern data3Pattern = Pattern.compile(data3String_REGEX);
+
+    public static boolean isValidData3String(String data3String) {
+        if (data3String == null || data3String.isBlank()) {
+            return false;
+        }  else return data3Pattern.matcher(data3String).matches();
+    }
 }

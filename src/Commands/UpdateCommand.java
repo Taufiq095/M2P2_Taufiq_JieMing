@@ -1,6 +1,6 @@
 package Commands;
 
-import Helper.EmailChecker;
+import Helper.Data3Checker;
 import Helper.InvalidInputsException;
 import Main.Command;
 import Main.Receiver;
@@ -56,7 +56,7 @@ public class UpdateCommand implements Command {
             throw new InvalidInputsException("Please enter a valid index");
         }
         if (param.length == 2) {
-            if (!EmailChecker.isValidEmail(param[2])) {
+            if (!Data3Checker.isValidEmail(param[2])) {
                 throw new InvalidInputsException("Please enter valid inputs");
             }
         }

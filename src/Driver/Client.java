@@ -13,9 +13,9 @@ public class Client {
             Stack<Command> history = new Stack<>();
             Receiver receiver = new Receiver();
 
-            String addinput1 = "First_name Last_name Email@emial.com";
+            String addinput1 = "First_name Last_name email";
             String addinput2 = "joHn dOe simple@example.com";
-            String addinput3 = "Hanna Moon tetter.tots@pota###toesarelife.com";
+            String addinput3 = "Hanna Moon";
             String addinput4 = "Ah green-tea@teaforlife.com";
             String addinput5 = "ching uyguyg joel joelching@Hotmail.com";
             String addinput6 = "ching joel joel@ching@Hotmail.com ghjghjghj";
