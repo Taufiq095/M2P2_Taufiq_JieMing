@@ -7,8 +7,6 @@ import Main.Receiver;
 
 import java.util.Stack;
 
-import static Helper.EmailChecker.isValidEmail;
-
 public class Client {
         public static void main(String[] args) {
 
@@ -36,14 +34,14 @@ public class Client {
             String updateinput5 = "1 Adam";
             String updateinput6 = "al bLUe bELl ice-cream@alaskaF@@ields.org ";
             String updateinput7 = "5 daniel negreanu dndn@email.commmm daniel";
-            String updateinput8 = "_____";
+            String updateinput8 = "          ";
             UpdateCommand update5 = new UpdateCommand(receiver, updateinput5);
             UpdateCommand update6 = new UpdateCommand(receiver, updateinput6);
             UpdateCommand update7 = new UpdateCommand(receiver, updateinput7);
             UpdateCommand update8 = new UpdateCommand(receiver, updateinput8);
 
             String deleteinput7 = "1";
-            String deleteinput8 = "2";
+            String deleteinput8 = "       ";
             String deleteinput9 = "$$$";
             DeleteCommand delete7 = new DeleteCommand(receiver, deleteinput7);
             DeleteCommand delete8 = new DeleteCommand(receiver, deleteinput8);
@@ -59,8 +57,6 @@ public class Client {
                     delete7, list,
                     undo, list,
                     update5, list,
-
-
                     add3, add4, list,
                     add5, add6,
                     add7, list,

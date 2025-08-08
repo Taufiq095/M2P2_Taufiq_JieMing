@@ -22,11 +22,6 @@ public class UpdateCommand implements Command {
     public UpdateCommand(Receiver receiver, String input) {
         this.receiver = receiver;
         splitInput = input.split(" ");
-//        this.param = new String[splitInput.length-1];
-//            // capitalising first letter of first name and last name
-//            for (int i =0; i < param.length; i++) {
-//                param[i] = splitInput[i+1];
-//            }
     }
 
     @Override

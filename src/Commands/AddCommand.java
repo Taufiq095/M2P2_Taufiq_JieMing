@@ -48,7 +48,6 @@ public class AddCommand implements Command {
 
     @Override
     public void undo() {
-//        receiver.delete(addedIndex); //deleting the last added item in datastore
         receiver.dataStore.remove(addedIndex-1);
     }
 }
