@@ -24,6 +24,8 @@ public class Invoker {
                 System.out.println("Please enter valid inputs");
             } catch (InvalidInputsException e) {
                 System.out.println(e.getMessage());
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter valid index");
             }
         }
     }

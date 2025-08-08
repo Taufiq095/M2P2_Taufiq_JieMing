@@ -6,7 +6,7 @@ import Main.Receiver;
 public class ListCommand implements Command {
 
     private Receiver receiver;
-    private boolean undoable = false;
+    private boolean undoable = true;
 
     @Override
     public boolean getUndoable() {

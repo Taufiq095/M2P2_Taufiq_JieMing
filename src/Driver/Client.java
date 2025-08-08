@@ -1,7 +1,6 @@
 package Driver;
 
 import Commands.*;
-import Helper.InvalidInputsException;
 import Main.Command;
 import Main.Invoker;
 import Main.Receiver;
@@ -30,7 +29,7 @@ public class Client {
             AddCommand add6 = new AddCommand(receiver, addinput6);
             AddCommand add7 = new AddCommand(receiver, addinput7);
 
-            String updateinput5 = "500 Adam";
+            String updateinput5 = "1 Adam";
             String updateinput6 = "al bLUe bELl ice-cream@alaskaF@@ields.org ";
             String updateinput7 = "5 daniel negreanu dndn@email.commmm daniel";
             UpdateCommand update5 = new UpdateCommand(receiver, updateinput5);
@@ -47,16 +46,18 @@ public class Client {
             ListCommand list = new ListCommand(receiver);
             UndoCommand undo = new UndoCommand(receiver, history);
 
-            Command[] command = {add1, add2, list,
-                    add3, add4, list,
-                    add5, add6, add7, list,
+            Command[] command = {
+//                    add1, add2, list,
+//                    add3, add4, list,
+//                    add5, add6,
+                    add7, list,
                     update5, list,
-                    update6, list,
-                    delete7, list,
-                    update7, list,
+//                    update6, list,
+//                    delete7, list,
+//                    update7, list,
                     undo, list,
-                    delete8, list,
-                    delete9, list
+//                    delete8, list,
+//                    delete9, list
             };
 
             Invoker invoker = new Invoker();

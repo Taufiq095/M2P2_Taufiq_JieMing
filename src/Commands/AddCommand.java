@@ -42,7 +42,6 @@ public class AddCommand implements Command {
 
     @Override
     public void execute() throws InvalidInputsException {
-        try {
             this.firstName = splitParam[0];
             this.lastName = splitParam[1];
             this.emailAddress = splitParam[2];
@@ -53,21 +52,11 @@ public class AddCommand implements Command {
                     lastName.toLowerCase().substring(1);
 
             if (!EmailChecker.isValidEmail(emailAddress)) {
-//            System.out.println("Invalid email address");
                 throw new InvalidInputsException("Please enter valid inputs");
             }
-        } catch (ArrayIndexOutOfBoundsException e) {
-            throw new InvalidInputsException("Please enter valid inputs");
-        }
-//        }
-//        else {
             receiver.add(firstName, lastName, emailAddress); //the end of
             // datastore
             addedIndex = receiver.dataStore.size();
-
-//        }
-//    } catch (InvalidInputsException e) {
-//            System.out.println(e.getMessage());}
     }
 
     @Override
