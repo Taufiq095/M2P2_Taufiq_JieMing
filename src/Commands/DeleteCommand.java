@@ -47,5 +47,4 @@ public class DeleteCommand implements Command {
             System.out.println("Please enter valid inputs");
         }
     }
-
 }

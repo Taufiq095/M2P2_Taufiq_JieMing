@@ -1,3 +1,2 @@
 John Doe simple@example.com
-Ah Boon green-tea@teaforlife.com
-Ching Joel joelching@Hotmail.com
+Valid Input valid@input.com

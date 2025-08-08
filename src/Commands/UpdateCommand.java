@@ -29,7 +29,6 @@ public class UpdateCommand implements Command {
         } catch (NumberFormatException e) { // for invalid index input
             this.index = -1; // setting invalid index
         }
-
             // capitalising first letter of first name and last name
             for (int i =0; i < param.length; i++) {
                 param[i] = splitInput[i+1];
@@ -43,23 +42,15 @@ public class UpdateCommand implements Command {
 
     @Override
     public void execute() throws InvalidInputsException {
-//        try {
-            this.index = Integer.parseInt(splitInput[0]);
-            if (index > receiver.dataStore.size()) {
-                throw new InvalidInputsException("Please enter a valid index");
-            }
+        this.index = Integer.parseInt(splitInput[0]);
+        if (index > receiver.dataStore.size()) {
+            throw new InvalidInputsException("Please enter a valid index");
+        }
         if (param.length == 2) {
             if (!EmailChecker.isValidEmail(param[2])) {
                 throw new InvalidInputsException("Please enter valid inputs");
             }
         } receiver.update(index, param);
-//        }
-//        catch (NumberFormatException e) { // for invalid index input
-//            System.out.println("Please enter valid index");
-//        }
-//        catch (InvalidInputsException e) {
-//            System.out.println(e.getMessage());
-//        }
     }
 
     public void undo() {

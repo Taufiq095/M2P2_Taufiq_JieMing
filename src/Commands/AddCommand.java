@@ -24,19 +24,6 @@ public class AddCommand implements Command {
     public AddCommand(Receiver receiver, String param) {
         this.receiver = receiver;
         splitParam = param.split(" ");
-//        if (splitParam.length != 3) {
-//            System.out.println("Wrong number of parameters");
-//        } else {
-//            this.firstName = splitParam[0];
-//            this.lastName = splitParam[1];
-//            this.emailAddress = splitParam[2];
-//        }
-
-//        firstName = firstName.toLowerCase().substring(0, 1).toUpperCase() +
-//                firstName.toLowerCase().substring(1);
-//
-//        lastName = lastName.toLowerCase().substring(0, 1).toUpperCase() +
-//                lastName.toLowerCase().substring(1);
 
     }
 
