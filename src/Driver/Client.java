@@ -58,21 +58,21 @@ public class Client {
                     undo, list,
                     delete7, list,
                     undo, list,
-                    update5, list
+                    update5, list,
 
 
-//                    add3, add4, list,
-//                    add5, add6,
-//                    add7, list,
-//                    add8, list,
-//                    update5, list,
-//                    update6, list,
-//                    delete7, list,
-//                    update7, list,
-//                    update8, list,
-//                    undo, list,
-//                    delete8, list,
-//                    delete9, list
+                    add3, add4, list,
+                    add5, add6,
+                    add7, list,
+                    add8, list,
+                    update5, list,
+                    update6, list,
+                    delete7, list,
+                    update7, list,
+                    update8, list,
+                    undo, list,
+                    delete8, list,
+                    delete9, list
             };
 
             Invoker invoker = new Invoker();

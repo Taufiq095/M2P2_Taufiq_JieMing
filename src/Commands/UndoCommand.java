@@ -9,7 +9,7 @@ public class UndoCommand implements Command {
 
     private Receiver receiver;
     private Stack<Command> history;
-    private boolean undoable = true;
+    private boolean undoable = false;
 
     @Override
     public boolean getUndoable() {
