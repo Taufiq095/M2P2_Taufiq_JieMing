@@ -8,7 +8,7 @@ public class EmailChecker {
     //email validation using REGEX, local before @, domain after @
 
     //   private static final String localEmail_REGEX
-    private static final String localEmail_REGEX = "^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?$";
+    private static final String localEmail_REGEX = "^[a-zA-Z0-9_]([a-zA-Z0-9._-]*[a-zA-Z0-9_]|[a-zA-Z0-9._-])?$";
 
     //    private static final Pattern local_Pattern
     private static final Pattern local_Pattern = Pattern.compile(localEmail_REGEX);
