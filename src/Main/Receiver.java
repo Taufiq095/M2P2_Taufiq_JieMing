@@ -1,6 +1,5 @@
 package Main;
 
-import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -10,13 +9,34 @@ import java.io.*;
 
 public class Receiver {
 
+    /**
+     * A String arraylist to store first name, last name, and email.
+     */
     public ArrayList<String[]> dataStore = new ArrayList<>();
 
+    /**
+     * Adds a new string array to the data store.
+     *
+     * @param firstName The first name
+     * @param lastName  The last name
+     * @param email     The email address
+     */
     public void add(String firstName, String lastName, String email) {
         System.out.println("add");
         dataStore.add(new String[]{firstName, lastName, email});
     }
 
+    /**
+     * Updates an existing string in the data store at the specified index.
+     * The `input` array should contain the new values for first name, last name, and email
+     * in that order, but not necessarily having all the data types.
+     *
+     * Only specified data types will be updated. Un-updated data points will
+     * remain unchanged.
+     *
+     * @param index The 1-based index of the entry to update.
+     * @param input A `String` array containing the new first name, last name, and email.
+     */
     public void update(int index, String[] input) {
             String newString = "# " + index;
             for (int i = 0; i < input.length; i++) {
@@ -27,6 +47,11 @@ public class Receiver {
             System.out.println("update " + newString);
     }
 
+    /**
+     * Stores the current Arraylist to a file named "dataStore.txt"
+     * located in the "src" file. The file will be created if it does not exist,
+     *  Each contact entry consist of first name, last name, and email.
+     */
     public void storeToFile() {
         Path filePath = Paths.get("src/dataStore.txt");
 
@@ -42,6 +67,10 @@ public class Receiver {
 
     }
 
+    /**
+     * Lists all String currently in the datastore.
+     * Each entry is indexed and displays the first name, last name, and email.
+     */
     public void list() {
         System.out.println("List");
         for (int i=0; i<dataStore.size(); i++) {
@@ -53,6 +82,11 @@ public class Receiver {
         }
     }
 
+    /**
+     * Deletes a String from the data store at the specified index.
+     *
+     * @param index The index of the entry to delete (counting from 1).
+     */
     public void delete(int index) {
         System.out.println("Delete # " + index);
         dataStore.remove(index-1);

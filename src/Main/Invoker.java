@@ -8,10 +8,25 @@ public class Invoker {
 
     private Command[] cmdToExecute;
 
+    /**
+     * Sets the array of commands to be executed by this invoker.
+     * These commands will be processed sequentially when {@link #executeCommand(Stack)} is called.
+     *
+     * @param cmdToExecute An array of Command objects that the invoker will
+     * execute.
+     */
     public void setCommandsForExecution(Command[] cmdToExecute) {
         this.cmdToExecute = cmdToExecute;
     }
 
+    /**
+     * Executes the commands that have been set using {@link #setCommandsForExecution(Command[])}.
+     * Each command in the array is executed in order.
+     * If a command is undoable, it is pushed onto the provided history stack
+     * after successful execution.
+     *
+     * @param history A stack of Command objects used to store commands
+     */
     public void executeCommand(Stack<Command> history) {
         for (int i=0; i<cmdToExecute.length; i++) {
             try {
