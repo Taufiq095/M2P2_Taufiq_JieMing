@@ -35,16 +35,13 @@ public class EmailChecker {
         boolean result = false;
         String[] parts = email.split("@");
         if (parts.length != 2) {
-//            System.out.println(result);
             return false;
         }
 
         String localPart = parts[0];
         String domainPart = parts[1];
         result = validateLocalPart(localPart) && validateDomainPart(domainPart);
-//        System.out.println(result);
         return result;
-//        return (validateLocalPart(localPart) && validateDomainPart(domainPart));
         }
 
 }

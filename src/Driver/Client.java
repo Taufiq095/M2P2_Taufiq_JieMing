@@ -33,7 +33,7 @@ public class Client {
             AddCommand add7 = new AddCommand(receiver, addinput7);
             AddCommand add8 = new AddCommand(receiver, addinput8);
 
-            String updateinput5 = "-50.50 Adam";
+            String updateinput5 = "1 Adam";
             String updateinput6 = "al bLUe bELl ice-cream@alaskaF@@ields.org ";
             String updateinput7 = "5 daniel negreanu dndn@email.commmm daniel";
             String updateinput8 = "_____";
@@ -42,8 +42,8 @@ public class Client {
             UpdateCommand update7 = new UpdateCommand(receiver, updateinput7);
             UpdateCommand update8 = new UpdateCommand(receiver, updateinput8);
 
-            String deleteinput7 = "666";
-            String deleteinput8 = "______";
+            String deleteinput7 = "1";
+            String deleteinput8 = "2";
             String deleteinput9 = "$$$";
             DeleteCommand delete7 = new DeleteCommand(receiver, deleteinput7);
             DeleteCommand delete8 = new DeleteCommand(receiver, deleteinput8);
@@ -53,12 +53,19 @@ public class Client {
             UndoCommand undo = new UndoCommand(receiver, history);
 
             Command[] command = {
+
                     add1, add2, list,
+                    undo, list,
+                    delete7, list,
+                    undo, list,
+                    update5, list
+
+
 //                    add3, add4, list,
 //                    add5, add6,
 //                    add7, list,
-                    add8, list,
-                    update5, list,
+//                    add8, list,
+//                    update5, list,
 //                    update6, list,
 //                    delete7, list,
 //                    update7, list,
@@ -72,71 +79,8 @@ public class Client {
             invoker.setCommandsForExecution(command);
             invoker.executeCommand(history);
             receiver.storeToFile();
-//            testEmails();
-            }
+        }
 
-
-//    public static void testEmails() {
-//        System.out.println("-----VALID EMAILS------");
-//        isValidEmail("normalEmail@email.com");
-//        isValidEmail("ALLCAPS@email.com");
-//        isValidEmail("1234@email.com");
-//        isValidEmail("1234.this.is.valid.56@email.com");
-//        isValidEmail("test-dash@email.com");
-//        isValidEmail("test.fullstop@email.com");
-//        isValidEmail("test_underscore@email.com");
-//        isValidEmail("test-dash@email.com");
-//        isValidEmail("test.v_a-riations@email.com");
-//        isValidEmail("_test.v_a-riations@email.com");
-//        isValidEmail("test.v_a-riations@email.com");
-//        isValidEmail("test.v_a-ria__tions@email.com");
-//        isValidEmail("TEST.V_A-RIA__TIONS@email.com");
-//        isValidEmail("abcde@xyz.co");
-//        isValidEmail("abcde@xyz123.co");
-//        isValidEmail("abcde@valid.url.ab");
-//        isValidEmail("abcde@valid.url.com");
-//        isValidEmail("abcde@valid.url.com");
-//        isValidEmail("a1.b-2_3.xyz@some-thin-g.com");
-//        isValidEmail("a1.b-2_3.xyz@some-THinGG-g.com");
-//        isValidEmail("a1.b-2_3.xyz@SOME-thing.com");
-//        isValidEmail("A1.B-2_3.XYZ@SOME-thing.com");
-//        isValidEmail("a1.b-2_3.xyz@99-123.com");
-//        isValidEmail("_@email.com");
-//        isValidEmail("1@email.com");
-//        isValidEmail("_1@email.com");
-//
-//        System.out.println("---------INVALID EMAILS----------");
-//
-//        isValidEmail("invalid@email.COM");
-//        isValidEmail("invalid@email.cOm");
-//        isValidEmail("invalid@e_email.com");
-//        isValidEmail("invalid!@email.com");
-//        isValidEmail("invalid#@email.com");
-//        isValidEmail("inva%lid@email.com");
-//        isValidEmail("inva(%)lid@email.com");
-//        isValidEmail("invalid@email.comm");
-//        isValidEmail("-invalid@email.com");
-//        isValidEmail("invalid-@email.com");
-//        isValidEmail("in valid@email.com");
-//        isValidEmail("-.invalid-@email.com");
-//        isValidEmail("-.invalid-@email.com");
-//        isValidEmail(".invalid@email.com");
-//        isValidEmail("invalid.@email.com");
-//        isValidEmail(".invalid.@email.com");
-//        isValidEmail("domainIssue@.email.com");
-//        isValidEmail("domainIssue@email.com.");
-//        isValidEmail("domainIssue@-email.com-");
-//        isValidEmail("domainIssue@email..com-");
-//        isValidEmail("domainIssue@ema--il..com-");
-//        isValidEmail("-@email.com");
-//        isValidEmail(".@email.com");
-//        isValidEmail("._@email.com");
-//        isValidEmail("hi");
-//        isValidEmail("hi@");
-//        isValidEmail("hi@.com");
-//        isValidEmail("hi@emailcom");
-//        isValidEmail(" ");
-//    }
     }
     
     
