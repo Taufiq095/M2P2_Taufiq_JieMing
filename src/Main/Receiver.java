@@ -76,7 +76,7 @@ public class Receiver {
             for  (int j=0; j<dataStore.get(i).length; j++) {
                 System.out.print(dataStore.get(i)[j] + " ");
             }
-            System.out.println();
+            System.out.println(); //for formatting purposes. 1 line per index
         }
     }
 

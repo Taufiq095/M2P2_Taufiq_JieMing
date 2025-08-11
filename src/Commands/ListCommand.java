@@ -29,8 +29,4 @@ public class ListCommand implements Command {
         receiver.list();
     }
 
-//    @Override
-//    public String toString() {
-//        return "list";
-//    }
 }

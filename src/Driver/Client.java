@@ -17,7 +17,7 @@ public class Client {
             String addinput2 = "joHn dOe simple@example.com";
             String addinput3 = "Hanna Moon";
             String addinput4 = "Ah green-tea@teaforlife.com";
-            String addinput5 = "ching uyguyg joel joelching@Hotmail.com";
+            String addinput5 = "ching uyguyg joel joelching@Hot@mail.com";
             String addinput6 = "ching joel joel@Hotmail.com ghjghjghj";
             String addinput7 = "valid input valid@input.com";
             String addinput8 = "         ";
@@ -31,16 +31,16 @@ public class Client {
             AddCommand add7 = new AddCommand(receiver, addinput7);
             AddCommand add8 = new AddCommand(receiver, addinput8);
 
-            String updateinput5 = "1 Adam";
+            String updateinput5 = "5 Adam";
             String updateinput6 = "al bLUe bELl ice-cream@alaskaF@@ields.org ";
-            String updateinput7 = "5 daniel negreanu dndn@email.commmm daniel";
+            String updateinput7 = "negreanu 234 dndn@email.commmm daniel";
             String updateinput8 = "          ";
             UpdateCommand update5 = new UpdateCommand(receiver, updateinput5);
             UpdateCommand update6 = new UpdateCommand(receiver, updateinput6);
             UpdateCommand update7 = new UpdateCommand(receiver, updateinput7);
             UpdateCommand update8 = new UpdateCommand(receiver, updateinput8);
 
-            String deleteinput7 = "1";
+            String deleteinput7 = "abc";
             String deleteinput8 = "       ";
             String deleteinput9 = "$$$";
             DeleteCommand delete7 = new DeleteCommand(receiver, deleteinput7);
@@ -51,7 +51,11 @@ public class Client {
             UndoCommand undo = new UndoCommand(receiver, history);
 
             Command[] command = {
-
+//                    list, list, list, list, list, list,
+//                    undo, undo, undo, undo, undo, undo,
+//                    delete7, delete8, delete9, delete7, delete8, delete9,
+//                    update5, update6, update7,
+//                    undo,
                     add1, add2, list,
                     undo, list,
                     delete7, list,
