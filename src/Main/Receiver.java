@@ -22,7 +22,6 @@ public class Receiver {
      * @param email     The email address
      */
     public void add(String firstName, String lastName, String email) {
-        System.out.println("add");
         dataStore.add(new String[]{firstName, lastName, email});
     }
 
@@ -72,7 +71,6 @@ public class Receiver {
      * Each entry is indexed and displays the first name, last name, and email.
      */
     public void list() {
-        System.out.println("List");
         for (int i=0; i<dataStore.size(); i++) {
             System.out.printf("%02d. ", i+1);
             for  (int j=0; j<dataStore.get(i).length; j++) {
@@ -88,7 +86,6 @@ public class Receiver {
      * @param index The index of the entry to delete (counting from 1).
      */
     public void delete(int index) {
-        System.out.println("Delete # " + index);
         dataStore.remove(index-1);
     }
 }

@@ -10,7 +10,7 @@ public class UpdateCommand implements Command {
     private Receiver receiver;
     private int index;
     private String[] param;
-    String[]splitInput;
+    private String[]splitInput;
     private String[] oldData; //to remember the original contact data before updating
 
     /**
@@ -61,7 +61,7 @@ public class UpdateCommand implements Command {
         if (index > receiver.dataStore.size()) {
             throw new InvalidInputsException("Please enter a valid index");
         }
-        if (param.length == 2) {
+        if (param.length == 3) {
             if (!Data3Checker.isValidEmail(param[2])) {
                 throw new InvalidInputsException("Please enter valid inputs");
             }

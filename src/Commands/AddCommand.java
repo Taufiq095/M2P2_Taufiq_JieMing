@@ -35,6 +35,9 @@ public class AddCommand implements Command {
 
     @Override
     public void execute() throws InvalidInputsException {
+        if (splitParam.length > 3) {
+            throw new InvalidInputsException("Please enter valid inputs");
+        }
             this.firstName = splitParam[0];
             this.lastName = splitParam[1];
             this.data3String = splitParam[2];
@@ -54,7 +57,7 @@ public class AddCommand implements Command {
                 } else data3String = data3String.toLowerCase().substring(0, 1).toUpperCase() +
                         data3String.toLowerCase().substring(1);
             }
-
+            System.out.println("add");
             receiver.add(firstName, lastName, data3String); //the end of
             // datastore
             addedIndex = receiver.dataStore.size();

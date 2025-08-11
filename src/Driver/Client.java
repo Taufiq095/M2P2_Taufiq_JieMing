@@ -18,7 +18,7 @@ public class Client {
             String addinput3 = "Hanna Moon";
             String addinput4 = "Ah green-tea@teaforlife.com";
             String addinput5 = "ching uyguyg joel joelching@Hotmail.com";
-            String addinput6 = "ching joel joel@ching@Hotmail.com ghjghjghj";
+            String addinput6 = "ching joel joel@Hotmail.com ghjghjghj";
             String addinput7 = "valid input valid@input.com";
             String addinput8 = "         ";
 
@@ -58,7 +58,8 @@ public class Client {
                     undo, list,
                     update5, list,
                     add3, add4, list,
-                    add5, add6,
+                    add5,
+                    add6, list,
                     add7, list,
                     add8, list,
                     update5, list,

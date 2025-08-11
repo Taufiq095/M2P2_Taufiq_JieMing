@@ -25,12 +25,12 @@ public class ListCommand implements Command {
 
     @Override
     public void execute() {
+        System.out.println("List");
         receiver.list();
     }
 
-    @Override
-    public String toString() {
-        return "list";
-    }
-
+//    @Override
+//    public String toString() {
+//        return "list";
+//    }
 }

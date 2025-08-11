@@ -36,8 +36,9 @@ public class DeleteCommand implements Command {
             System.out.println("Please enter valid inputs");
         } else {
             try {
+                System.out.println("Delete # "  + deletedIndex);
                 //before deleting, grab and clone the data at index
-                this.deletedData = receiver.dataStore.get(deletedIndex - 1).clone(); //-1 since arraylist starts from 0
+                this.deletedData = receiver.dataStore.get(deletedIndex - 1); //-1 since arraylist starts from 0
                 receiver.delete(deletedIndex);
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("Please enter valid inputs");
